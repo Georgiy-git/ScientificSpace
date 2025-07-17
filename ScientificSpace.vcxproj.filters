@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{7a95ea9d-f6ab-46a7-94d3-cf0dceb44866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Главный процесс">
+      <UniqueIdentifier>{128e08fa-f7f0-49e5-8533-1d99948ec300}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Object.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureHandler.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="CloseButton.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="WrapButton.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainProcess.cpp">
+      <Filter>Главный процесс</Filter>
+    </ClCompile>
+    <ClCompile Include="Panel.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Object.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureHandler.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CloseButton.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="WrapButton.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="EnumProcesses.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="MainProcess.hpp">
+      <Filter>Главный процесс</Filter>
+    </ClInclude>
+    <ClInclude Include="Panel.hpp">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
