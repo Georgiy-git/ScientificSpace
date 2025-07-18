@@ -6,6 +6,7 @@
 
 class Object;
 class Panel;
+class LeftPanel;
 
 
 class MainProcess
@@ -21,6 +22,6 @@ private:
 	SDL_Renderer* render;
 	std::vector<Object*> objects;
 
-	std::shared_ptr<Panel> left_toolbar;
+	std::shared_ptr<LeftPanel> left_panel;
 	std::shared_ptr<Panel> upper_toolbar;
 };

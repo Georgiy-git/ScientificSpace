@@ -16,6 +16,12 @@ void TextureHandler::start_anim(int num_anim, int shot_of_anim, int delay_ms)
 	delay = std::chrono::milliseconds(delay_ms);
 }
 
+void TextureHandler::change_show_rect(int column, int row)
+{
+	object->show_texture_frame.x = object->show_texture_frame.w * column;
+	object->show_texture_frame.y = object->show_texture_frame.h * row;
+}
+
 void TextureHandler::process()
 {
 	if (is_plaing) {

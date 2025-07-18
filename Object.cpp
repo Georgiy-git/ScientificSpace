@@ -114,6 +114,11 @@ void Object::set_texture(std::string file_name, float w, float h)
 	show_texture_frame.h = h;
 }
 
+void Object::change_show_rect(int column, int row)
+{
+	texture_handler->change_show_rect(column, row);
+}
+
 void Object::iterate() {
 	if (texture != nullptr) { texture_handler->process(); }
 	render_frame();

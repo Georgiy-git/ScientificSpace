@@ -3,6 +3,8 @@
 #include <vector>
 #include "Object.hpp"
 
+//using iterator = std::vector<std::shared_ptr<Object>>::iterator;
+
 
 class Panel : public Object
 {
@@ -11,11 +13,11 @@ public:
 		char direction = 'h', float object_distance = 20, 
 		float distance_of_border_w = 20, float distance_of_border_h = 20);
 
-	void process_event(SDL_Event* event) override;
+	virtual void process_event(SDL_Event* event) override;
 
 	void iterate() override;
 
-	void add(std::shared_ptr<Object> object);
+	Object* add(std::shared_ptr<Object> object);
 
 	std::vector<std::shared_ptr<Object>> objects;
 

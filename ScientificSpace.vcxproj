@@ -129,6 +129,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="LeftPanel.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="TextureHandler.cpp" />
     <ClCompile Include="CloseButton.cpp" />
@@ -138,6 +140,8 @@
     <ClCompile Include="WrapButton.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Button.hpp" />
+    <ClInclude Include="LeftPanel.hpp" />
     <ClInclude Include="Panel.hpp" />
     <ClInclude Include="TextureHandler.hpp" />
     <ClInclude Include="CloseButton.hpp" />

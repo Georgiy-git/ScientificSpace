@@ -25,6 +25,7 @@ public:
 	static inline int display_h;
 
 	void set_texture(std::string file_name, float w, float h);
+	void change_show_rect(int column, int row);
 
 	void set_frame_color(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 	void set_frame_size(float x = 1);
@@ -36,13 +37,14 @@ public:
 	float center_x, center_y, width, height,
 		left_border, right_border, upper_border, lower_border;
 
-protected:
 	//Обработка событий внутри объекта
 	bool inside_clicked(SDL_Event* event);
 	bool inside_moved(SDL_Event* event);
 	bool inside_enter_exit(SDL_Event* event);
 	bool inside_enter(SDL_Event* event);
 	bool inside_exit(SDL_Event* event);
+
+protected:
 	virtual bool inside(float x, float y);	
 	bool cursor_inside = false;;
 

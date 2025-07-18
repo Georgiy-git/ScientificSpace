@@ -28,8 +28,8 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 	SDL_Init(SDL_INIT_VIDEO);
 	Object::init_display_size();
 	SDL_CreateWindowAndRenderer("Scientific Space", 0, 0, SDL_WINDOW_FULLSCREEN, &window, &render);
-	objects.push_back(new CloseButton(render, Object::display_w - 75, 0, 75, 45, CLOSE_BUTTON_TEXURE));
-	objects.push_back(new WrapButton(render, Object::display_w - 150, 0, 75, 45, WRAP_BUTTON_TEXURE, window));
+	objects.push_back(new CloseButton(render, Object::display_w - 75., 0., 75., 45., CLOSE_BUTTON_TEXURE));
+	objects.push_back(new WrapButton(render, Object::display_w - 150., 0., 75., 45., WRAP_BUTTON_TEXURE, window));
 
 	main_process = new MainProcess(render);
 	this_process = MAIN_PROCESS;

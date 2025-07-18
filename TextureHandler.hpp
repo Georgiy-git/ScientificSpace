@@ -12,6 +12,7 @@ class TextureHandler
 public:
 	TextureHandler(Object* object);
 	void start_anim(int num_anim = 0, int shot_of_anim = 1, int delay_ms = 50);
+	void change_show_rect(int column, int row);
 	void process();
 
 protected:
