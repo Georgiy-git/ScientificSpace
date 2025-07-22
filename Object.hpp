@@ -17,7 +17,7 @@ public:
 	virtual void iterate();
 	virtual void process_event(SDL_Event* event);
 
-	~Object();
+	virtual ~Object();
 
 	//Инициализация размера диспленя для класса.
 	static void init_display_size();
@@ -37,7 +37,7 @@ public:
 	float center_x, center_y, width, height,
 		left_border, right_border, upper_border, lower_border;
 
-	//Обработка событий внутри объекта
+	//Обработка событий внутри объекта.
 	bool inside_clicked(SDL_Event* event);
 	bool inside_moved(SDL_Event* event);
 	bool inside_enter_exit(SDL_Event* event);
@@ -45,8 +45,9 @@ public:
 	bool inside_exit(SDL_Event* event);
 
 protected:
+	//Обработка событий внутри объекта.
 	virtual bool inside(float x, float y);	
-	bool cursor_inside = false;;
+	bool cursor_inside = false;
 
 	//Отрисовщик.
 	void set_render_draw_color(std::array<uint8_t, 4> RGBA);
@@ -59,7 +60,7 @@ protected:
 	SDL_Texture* texture = nullptr;
 	SDL_FRect show_texture_frame;
 	SDL_FRect size_texture_frame;
-public:
+
 	//Рамка выделения объекта.
 	void render_frame();
 	bool flag_render_frame = false;

@@ -12,15 +12,9 @@ void Button::process_event(SDL_Event* event)
 		remove_pressing();
 	}
 	else if (!pressing) {
-		if (inside_enter(event)) {
-			change_show_rect(1, 0);
-		}
-		if (inside_exit(event)) {
-			change_show_rect(0, 0);
-		}
-		if (inside_clicked(event) && flag_pressing) {
-			set_pressing();
-		}
+		if (inside_enter(event)) click_texture();
+		if (inside_exit(event)) unclick_texture();
+		if (inside_clicked(event) && flag_pressing) set_pressing();
 	}
 }
 
@@ -32,11 +26,21 @@ void Button::reset_pressing_flag()
 void Button::remove_pressing()
 {
 	pressing = false;
-	change_show_rect(0, 0);
+	unclick_texture();
 }
 
 void Button::set_pressing()
 {
 	pressing = true;
+	click_texture();
+}
+
+void Button::click_texture()
+{
 	change_show_rect(1, 0);
+}
+
+void Button::unclick_texture()
+{
+	change_show_rect(0, 0);
 }

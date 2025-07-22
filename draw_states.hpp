@@ -1,0 +1,7 @@
+
+enum draw_states {
+	NULL_STATE,
+	RECT_DRAW_STATE,
+	LINE_DRAW_STATE,
+	ROUND_DRAW_STATE,
+};

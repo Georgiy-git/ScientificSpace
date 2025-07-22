@@ -24,6 +24,7 @@ Object::~Object()
 }
 
 void Object::init_display_size()
+//Устанавливает в переменные display_bounds размер экрана
 {
 	SDL_Rect display_bounds;
 	SDL_DisplayID id = SDL_GetPrimaryDisplay();
@@ -33,16 +34,17 @@ void Object::init_display_size()
 }
 
 bool Object::inside_clicked(SDL_Event* event)
+//Нажатие мыши внутри области объекта. 
 {
-	if (event->type == SDL_EVENT_MOUSE_BUTTON_UP) {
-		if (inside(event->button.x, event->button.y)) {
+	if (event->type == SDL_EVENT_MOUSE_BUTTON_UP && 
+		inside(event->button.x, event->button.y)) {
 			return true;
 		}
-	}
 	return false;
 }
 
 bool Object::inside_moved(SDL_Event* event)
+//Движение мыши внутри объекта.
 {
 	if (event->type == SDL_EVENT_MOUSE_MOTION) {
 		if (inside(event->button.x, event->button.y)) {
@@ -52,56 +54,54 @@ bool Object::inside_moved(SDL_Event* event)
 	return false;
 }
 
-bool Object::inside_enter_exit(SDL_Event* event)
-{
+bool Object::inside_enter_exit(SDL_Event* event) {
 	return inside_enter(event) || inside_exit(event);
 }
 
 bool Object::inside_enter(SDL_Event* event)
+//Вхождение курсора мыши в область объекта.
 {
-	if (inside_moved(event)) {
-		if (!cursor_inside) {
-			cursor_inside = true;
-			return true;
-		}
-	}
-	return false;
-}
-
-bool Object::inside_exit(SDL_Event* event)
-{
-	if (!inside_moved(event)) {
-		if (cursor_inside) {
-			cursor_inside = false;
-			return true;
-		}
-	}
-	return false;
-}
-
-bool Object::inside(float x, float y)
-{
-	if (x > left_border && x < right_border &&
-		y > upper_border && y < lower_border)
-	{
+	if (inside_moved(event) && !cursor_inside) {
+		cursor_inside = true;
 		return true;
 	}
 	return false;
 }
 
-void Object::set_render_draw_color(std::array<uint8_t, 4> RGBA)
+bool Object::inside_exit(SDL_Event* event)
+//Выход курсора мыши их области объекта.
 {
-	uint8_t r, g, b, a;
-	r = RGBA[0]; g = RGBA[1]; b = RGBA[2]; a = RGBA[3];
-	SDL_SetRenderDrawColor(render, r, g, b, a);
+	if (!inside_moved(event) && cursor_inside) {
+		cursor_inside = false;
+		return true;
+	}
+	return false;
 }
 
-std::array<uint8_t, 4> Object::unpack_from_uint8(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
+bool Object::inside(float x, float y)
+//Определение области объекта по переменным ..._border.
 {
+	if (x > left_border && x < right_border &&
+		y > upper_border && y < lower_border)
+	{ 
+		return true; 
+	}
+	return false;
+}
+
+void Object::set_render_draw_color(std::array<uint8_t, 4> RGBA) {
+	SDL_SetRenderDrawColor(render, RGBA[0], RGBA[1], RGBA[2], RGBA[3]);
+}
+
+std::array<uint8_t, 4> Object::unpack_from_uint8(uint8_t r, uint8_t g, uint8_t b, uint8_t a) {
 	return std::array<uint8_t, 4>{r, g, b, a};
 }
 
 void Object::set_texture(std::string file_name, float w, float h)
+//Загружает и устанавливает изображение по указанному пути.
+// Для анимации:
+// w - ширина кадра
+// h - высота кадра
 {
 	texture = IMG_LoadTexture(render, file_name.c_str());
 	size_texture_frame.x = center_x;
@@ -115,6 +115,7 @@ void Object::set_texture(std::string file_name, float w, float h)
 }
 
 void Object::change_show_rect(int column, int row)
+//Изменение отображаемого кадра
 {
 	texture_handler->change_show_rect(column, row);
 }
@@ -124,9 +125,7 @@ void Object::iterate() {
 	render_frame();
 }
 
-void Object::process_event(SDL_Event* event) {
-
-}
+void Object::process_event(SDL_Event* event) {}
 
 void Object::render_frame()
 {
@@ -150,12 +149,12 @@ void Object::set_frame_size(float x)
 	frame.h = (lower_border - upper_border) * x;
 }
 
-void Object::reset_render_frame_flag()
-{
+void Object::reset_render_frame_flag() {
 	flag_render_frame = !flag_render_frame;
 }
 
 void Object::set_size(float center_x, float center_y, float width, float height)
+//При -1.0 задаются соответствующие ранее устновленные размеры.
 {
 	if (center_x != -1.0) { this->center_x = center_x; }
 	if (center_y != -1.0) { this->center_y = center_y; }

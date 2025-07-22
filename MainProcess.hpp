@@ -18,6 +18,8 @@ public:
 
 	void event(SDL_Event* event);
 
+	int draw_state = 0;
+
 private:
 	SDL_Renderer* render;
 	std::vector<Object*> objects;

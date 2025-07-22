@@ -9,14 +9,14 @@ public:
 
 	virtual void process_event(SDL_Event* event) override;
 
+	//Обработка фиксирования нажатия кнопки.
 	void reset_pressing_flag();
-
 	void remove_pressing();
-
 	void set_pressing();
-
 	bool pressing = false;
-
 	bool flag_pressing = false;
+
+	void click_texture();
+	void unclick_texture();
 };
 

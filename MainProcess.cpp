@@ -10,7 +10,7 @@ MainProcess::MainProcess(SDL_Renderer* render)
 	: render{render}
 {
 	left_panel = std::make_shared<LeftPanel>(
-		render, 30, Object::display_h / 5, 120, 660, 'v', 20, 20, 40);
+		this, render, 30, Object::display_h / 5, 120, 660, 'v', 20, 20, 40);
 	objects.push_back(left_panel.get());
 
 

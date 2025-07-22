@@ -2,7 +2,6 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
-#include <Windows.h>
 #include <iostream>
 #include <vector>
 
@@ -13,15 +12,22 @@
 #include "CloseButton.hpp"
 #include "WrapButton.hpp"
 
+
+//Текстуры
 #define CLOSE_BUTTON_TEXURE "textures\\anim_button_close.png"
 #define WRAP_BUTTON_TEXURE "textures\\anim_wrap_button.png"
 
+
+//Глобальные переменные
 SDL_Window* window;
 SDL_Renderer* render;
 uint32_t this_process;
 std::vector<Object*> objects;
 
+
+//Процессы
 MainProcess* main_process;
+
 
 SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 {
@@ -53,7 +59,6 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 	}
 
 	SDL_RenderPresent(render);
-	SDL_Delay(10);
 	return SDL_APP_CONTINUE;
 }
 
@@ -75,7 +80,4 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 }
 
 
-void SDL_AppQuit(void* appstate, SDL_AppResult result)
-{
-
-}
+void SDL_AppQuit(void* appstate, SDL_AppResult result) {}
