@@ -6,7 +6,7 @@ Button::Button(SDL_Renderer* render, float center_x, float center_y, float width
 
 }
 
-void Button::process_event(SDL_Event* event)
+void Button::event_process(SDL_Event* event)
 {
 	if (pressing && inside_clicked(event) && flag_pressing) {
 		remove_pressing();

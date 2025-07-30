@@ -125,7 +125,7 @@ void Object::iterate() {
 	render_frame();
 }
 
-void Object::process_event(SDL_Event* event) {}
+void Object::event_process(SDL_Event* event) {}
 
 void Object::render_frame()
 {

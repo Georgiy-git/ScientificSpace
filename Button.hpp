@@ -7,7 +7,7 @@ class Button : public Object
 public:
 	Button(SDL_Renderer* render, float center_x, float center_y, float width, float height);
 
-	virtual void process_event(SDL_Event* event) override;
+	virtual void event_process(SDL_Event* event) override;
 
 	//Обработка фиксирования нажатия кнопки.
 	void reset_pressing_flag();

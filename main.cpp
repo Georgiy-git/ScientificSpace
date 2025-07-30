@@ -73,7 +73,7 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
 	}
 
 	for (auto object : objects) {
-		object->process_event(event);
+		object->event_process(event);
 	}
 
 	return SDL_APP_CONTINUE;

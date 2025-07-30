@@ -15,7 +15,7 @@ public:
 	//Соответственно init, iter и event.
 	Object(SDL_Renderer* render, float center_x, float center_y, float width, float height);
 	virtual void iterate();
-	virtual void process_event(SDL_Event* event);
+	virtual void event_process(SDL_Event* event);
 
 	virtual ~Object();
 

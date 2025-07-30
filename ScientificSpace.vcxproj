@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="LeftPanel.cpp" />
+    <ClCompile Include="MouseHighlight.cpp" />
     <ClCompile Include="Panel.cpp" />
     <ClCompile Include="PressButtonGroup.cpp" />
     <ClCompile Include="TextureHandler.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Button.hpp" />
     <ClInclude Include="draw_states.hpp" />
     <ClInclude Include="LeftPanel.hpp" />
+    <ClInclude Include="MouseHighlight.hpp" />
     <ClInclude Include="Panel.hpp" />
     <ClInclude Include="PressButtonGroup.hpp" />
     <ClInclude Include="TextureHandler.hpp" />

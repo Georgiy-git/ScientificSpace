@@ -9,7 +9,7 @@
 class PressButtonGroup
 {
 public:
-	void process_event(SDL_Event* event);
+	void event_process(SDL_Event* event);
 	void press(Button* button);
 	void add(Button* button, int state);
 	void clear();

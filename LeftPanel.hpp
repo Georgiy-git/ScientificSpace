@@ -15,7 +15,7 @@ public:
 		char direction = 'h', float object_distance = 20,
 		float distance_of_border_w = 20, float distance_of_border_h = 20);
 
-	void process_event(SDL_Event* event) override;
+	void event_process(SDL_Event* event) override;
 
 	Button* make_rect_button;
 	Button* make_line_button;

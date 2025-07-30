@@ -4,6 +4,9 @@
 #include <vector>
 #include <memory>
 
+#include "MouseHighlight.hpp"
+
+
 class Object;
 class Panel;
 class LeftPanel;
@@ -19,6 +22,8 @@ public:
 	void event(SDL_Event* event);
 
 	int draw_state = 0;
+
+	MouseHighlight mouse_highlight;
 
 private:
 	SDL_Renderer* render;

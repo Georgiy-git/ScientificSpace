@@ -42,6 +42,9 @@
     <ClCompile Include="Button.cpp">
       <Filter>Строительные блоки</Filter>
     </ClCompile>
+    <ClCompile Include="MouseHighlight.cpp">
+      <Filter>Строительные блоки</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CloseButton.hpp">
@@ -76,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="draw_states.hpp">
       <Filter>Главный процесс</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseHighlight.hpp">
+      <Filter>Строительные блоки</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

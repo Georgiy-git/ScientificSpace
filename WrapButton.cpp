@@ -10,7 +10,7 @@ WrapButton::WrapButton(SDL_Renderer* render, float center_x, float center_y, flo
 	set_texture(texture_file_name, 500, 300);
 }
 
-void WrapButton::process_event(SDL_Event* event) {
+void WrapButton::event_process(SDL_Event* event) {
 	if (inside_clicked(event)) {
 		SDL_MinimizeWindow(window);
 	}

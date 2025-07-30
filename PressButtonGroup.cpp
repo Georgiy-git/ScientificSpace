@@ -2,7 +2,7 @@
 #include "Object.hpp"
 
 
-void PressButtonGroup::process_event(SDL_Event* event) {
+void PressButtonGroup::event_process(SDL_Event* event) {
 	for (auto button : buttons) {
 		if (button.first->inside_clicked(event)) {
 			if (button.first != pressing) {

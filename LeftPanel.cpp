@@ -26,12 +26,12 @@ LeftPanel::LeftPanel(MainProcess* process, SDL_Renderer* render, float center_x,
 	add(std::make_shared<Button>(render, 0, 0, 80, 80))->set_texture("textures\\maket_button.png", 300, 300);
 }
 
-void LeftPanel::process_event(SDL_Event* event)
+void LeftPanel::event_process(SDL_Event* event)
 {
-	Panel::process_event(event);
+	Panel::event_process(event);
 
 	if (inside_clicked(event)) {
-		button_group.process_event(event);
+		button_group.event_process(event);
 	}
 
 	if (button_group.state != process->draw_state) {

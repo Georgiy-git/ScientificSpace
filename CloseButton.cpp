@@ -10,7 +10,7 @@ CloseButton::CloseButton(SDL_Renderer* render, float center_x, float center_y, f
 	set_texture(texture_file_name, 500, 300);
 }
 
-void CloseButton::process_event(SDL_Event* event) {
+void CloseButton::event_process(SDL_Event* event) {
 	if (inside_clicked(event)) {
 		SDL_Event event_quit;
 		event_quit.type = SDL_EVENT_QUIT;
